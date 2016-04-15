@@ -6,7 +6,20 @@
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
 </head>
 
-<body>
+<!-- New Angular Directive NG-INIT, not usual in most cases, would use a controller  -->
+<!-- setting soccerTeams to an array of strings -->
+
+<!-- example 1 of an strings in array -->
+<!-- <body ng-init="soccerTeams = ['Arsenal FC', 'Real Madrid', 'Bayern Munich', 'PSG']"> -->
+<body ng-init="soccerTeams = [{name:'Arsenal FC', league:'English Premier League'}, {name:'Real Madrid', league:'La Liga'}]">
+  <ul>
+    <!-- new directive NG-REAPEAT, put it on the item that will repeat -->
+    <li ng-repeat="team in soccerTeams">
+      <!-- example 1 of an strings in array -->
+      <!-- <p>{{team}}</p> -->
+      <p>{{team.name}}, {{team.league}}</p>
+    </li>
+  </ul>
 
 </body>
 </html>
